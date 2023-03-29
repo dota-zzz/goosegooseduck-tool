@@ -1,5 +1,6 @@
 #include "dock.h"
 
+
 Dock::~Dock()
 {
 	delete btn;
@@ -22,7 +23,6 @@ Dock::Dock(QWidget* parent)
 	//初始设置
 	setGeometry(hidden_border, widgetY, widgetwidth, widgetheight);
 	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
-	//setMouseTracking(true);
 	mode = HIDDEN;
 
 	btn = new QPushButton;
@@ -44,6 +44,9 @@ Dock::Dock(QWidget* parent)
 	QPushButton* btn1_ = new QPushButton;
 	btn_->setText("清空");
 	btn1_->setText("退出");
+
+	btn_->setFixedSize(100, 50);
+	btn1_->setFixedSize(100, 50);
 	connect(btn_, &QPushButton::clicked, [&]() {
 		clear_layout(scrarea_lyt);
 		});
@@ -103,7 +106,6 @@ QScrollArea* Dock::create_scrollarea()
 				Sleep(1);
 			}
 			auto pix = capture_window();
-			pix = pix.scaled(pix.size() * 0.9, Qt::KeepAspectRatio);
 			PicBtn* newButton = new PicBtn(pix);
 			newButton->setMinimumSize(QSize(200, 200));
 			newButton->setMaximumSize(QSize(200, 200));
