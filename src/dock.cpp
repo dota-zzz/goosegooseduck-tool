@@ -22,7 +22,7 @@ Dock::Dock(QWidget* parent)
 
 	//初始设置
 	setGeometry(hidden_border, widgetY, widgetwidth, widgetheight);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 	mode = HIDDEN;
 
 	btn = new QPushButton;
@@ -33,7 +33,7 @@ Dock::Dock(QWidget* parent)
 	connect(btn, &QPushButton::clicked, [&]() {
 		change_mode();
 		});
-	btn->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	btn->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 	btn->setIcon(QIcon(left));
 	btn->setWindowOpacity(0.8);
 	btn->show();

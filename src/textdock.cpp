@@ -18,7 +18,7 @@ TextDock::TextDock(Dock* dock, QWidget* parent) {
 	hidden_border = screenRect.y() + screenRect.height() - 0.01 * widgetheight;
 	mode = HIDDEN;
 	setGeometry(widgetX, hidden_border, widgetwidth, widgetheight);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 
 
 	QVBoxLayout* vlyt = new QVBoxLayout;
@@ -31,7 +31,7 @@ TextDock::TextDock(Dock* dock, QWidget* parent) {
 	btnHeight = 40;
 	btnX = screenRect.x() + (screenWidth - btnWidth) / 2;
 	btn->setGeometry(btnX, hidden_border - btnHeight, btnWidth, btnHeight);
-	btn->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	btn->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 	btn->setIcon(QIcon(up));
 	btn->setWindowOpacity(0.8);
 	btn->show();

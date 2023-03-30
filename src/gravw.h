@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QWheelEvent>
 
+
 class GraView :public QGraphicsView
 {
 public:
@@ -18,6 +19,7 @@ public:
 		setResizeAnchor(QGraphicsView::AnchorUnderMouse);
 		setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
 		setAttribute(Qt::WA_DeleteOnClose);
+		setWindowFlags(Qt::Tool);
 	}
 	~GraView();
 
