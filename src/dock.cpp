@@ -22,7 +22,7 @@ Dock::Dock(QWidget* parent)
 
 	//初始设置
 	setGeometry(hidden_border, widgetY, widgetwidth, widgetheight);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
+	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 	mode = HIDDEN;
 
 	btn = new QPushButton;
